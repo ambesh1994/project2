@@ -12,6 +12,7 @@ stages
     stage ("run") {
     steps {
     sh '''
+    docker rm -f httpd | exit 0
     docker run -d -p 12345:80 --name httpd httpd
     '''
     }
